@@ -17,7 +17,7 @@ Pod::Spec.new do |s|
 
   s.name         = "ASIHTTPRequest"
   s.version      = "1.8.2"
-  s.summary      = ""
+  s.summary      = "Easy to use CFNetwork wrapper for HTTP requests, Objective-C, Mac OS X and iPhone."
 
   s.description  = <<-DESC
                    A longer description of ASIHTTPRequest in Markdown format.
@@ -39,7 +39,7 @@ Pod::Spec.new do |s|
   #  Popular ones are 'MIT', 'BSD' and 'Apache License, Version 2.0'.
   #
 
-  s.license      = "MIT (example)"
+  s.license      = "New BSD License"
   # s.license      = { :type => "MIT", :file => "FILE_LICENSE" }
 
 
@@ -117,7 +117,7 @@ Pod::Spec.new do |s|
   #
 
   # s.framework  = "SomeFramework"
-  s.frameworks = "CFNetWork.framework", "CoreGraphics.framework", "MobileCoreServices.framwork", "SystemConfiguration.framwork", "UIKit.framwork", "Security.framwork"
+  s.frameworks = "CFNetWork", "CoreGraphics", "MobileCoreServices", "SystemConfiguration", "UIKit", "Security"
 
   # s.library   = "iconv"
   s.libraries = "xml2.2", "z.1"
