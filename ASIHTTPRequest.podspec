@@ -90,7 +90,7 @@ Pod::Spec.new do |s|
   #  Not including the public_header_files will make all headers public.
   #
 
-  s.source_files  = "Classes", "Classes/**/*.{h,m}"
+#  s.source_files  = "Classes", "Classes/**/*.{h,m}"
   # s.exclude_files = "Classes/Exclude"
 
   # s.public_header_files = "Classes/**/*.h"
@@ -117,10 +117,10 @@ Pod::Spec.new do |s|
   #
 
   # s.framework  = "SomeFramework"
-  s.frameworks = "CFNetWork", "CoreGraphics", "MobileCoreServices", "SystemConfiguration", "UIKit", "Security"
+  # s.frameworks = "CFNetWork", "CoreGraphics", "MobileCoreServices", "SystemConfiguration", "UIKit", "Security"
 
   # s.library   = "iconv"
-  s.libraries = "xml2.tbd", "z.tbd"
+  # s.libraries = "xml2.2", "z.1"
 
 
   # ――― Project Settings ――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
@@ -131,7 +131,31 @@ Pod::Spec.new do |s|
 
   s.requires_arc = false
 
-  # s.xcconfig = { "HEADER_SEARCH_PATHS" => "$(SDKROOT)/usr/include/libxml2" }
- s.dependency "Reachability", "~> 3.2"
+# s.xcconfig = { "HEADER_SEARCH_PATHS" => "\"$(SDKROOT)/usr/include/libxml2\"" }
+# s.dependency "Reachability", "~> 3.2"
 
+ s.subspec 'Core' do |Core|
+      Core.source_files = 'Pods/Classes/*.{h,m}'
+      Core.public_header_files = 'Pods/Classes/*.h'
+      Core.dependency 'Reachability', '~> 3.2'
+      Core.frameworks = "CFNetWork", "CoreGraphics", "MobileCoreServices"
+      Core.libraries = "z.1"
+
+end
+
+s.subspec 'ASIWebPageRequest' do |ASIWebPageRequest|
+      ASIWebPageRequest.source_files = 'Pods/Classes/ASIWebPageRequest/*.{h,m}'
+      ASIWebPageRequest.public_header_files = 'Pods/Classes/ASIWebPageRequest/*.h'
+      ASIWebPageRequest.libraries = "xml2.2"
+      ASIWebPageRequest.xcconfig = "HEADER_SEARCH_PATHS": "\"$(SDKROOT)/usr/include/libxml2\""
+end
+
+s.subspec 'CloudFiles' do |CloudFiles|
+      CloudFiles.source_files = "Pods/Classes/CloudFiles/*.{h,m}", "Pods/Classes/S3/ASINSXMLParserCompat.h"
+      CloudFiles.public_header_files = 'Pods/Classes/ASIWebPageRequest/*.h'
+end
+
+s.subspec 'CloudFiles' do |CloudFiles|
+      CloudFiles.source_files = "Pods/Classes/S3/*.{h,m}"
+      CloudFiles.public_header_files = 'Pods/Classes/ASIWebPageRequest/*.h'
 end
