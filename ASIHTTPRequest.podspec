@@ -120,7 +120,7 @@ Pod::Spec.new do |s|
   s.frameworks = "CFNetWork", "CoreGraphics", "MobileCoreServices", "SystemConfiguration", "UIKit", "Security"
 
   # s.library   = "iconv"
-  s.libraries = "xml", "z"
+  s.libraries = "xml2.2", "z.1"
 
 
   # ――― Project Settings ――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
