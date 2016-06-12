@@ -1,5 +1,5 @@
 {
-  "name": "ASIHTTPRequest",
+  "name": "asi-http-request",
   "version": "1.8.2",
   "summary": "Easy to use CFNetwork wrapper for HTTP requests, Objective-C, Mac OS X and iPhone.",
   "homepage": "http://allseeing-i.com/ASIHTTPRequest",
