@@ -35,6 +35,8 @@ typedef enum _ASIPostFormat {
 	
 }
 
+- (NSArray *)getPostData;
+
 #pragma mark utilities 
 - (NSString*)encodeURL:(NSString *)string; 
  

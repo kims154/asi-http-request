@@ -27,6 +27,11 @@
 
 @implementation ASIFormDataRequest
 
+- (NSArray *)getPostData
+{
+    return postData;
+}
+
 #pragma mark utilities
 - (NSString*)encodeURL:(NSString *)string
 {
